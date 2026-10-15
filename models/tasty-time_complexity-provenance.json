@@ -1,0 +1,23 @@
+{
+  "raw_rows": 1410,
+  "retained_rows": 1382,
+  "excluded_labels": {
+    "np": 28
+  },
+  "class_counts": {
+    "linear": 787,
+    "logn": 26,
+    "nlogn": 127,
+    "quadratic": 374,
+    "cubic": 35,
+    "constant": 33
+  },
+  "target": "time_complexity",
+  "problem_id_limitation": "No source URLs/problem IDs supplied; descriptive leading-comment signature when available, otherwise row ID, plus normalized near-duplicate transitive grouping at train time.",
+  "url": "https://huggingface.co/datasets/Banana-Leopard/TASTY/resolve/8c273d0476910f9b08b8cf01c2e31fd843ee2d7f/cpp_data_clean.csv",
+  "revision": "8c273d0476910f9b08b8cf01c2e31fd843ee2d7f",
+  "sha256": "ff746b37b2d7adf8e7436c772732c62a2385b18b4e78b5ad1ef518e96f70b61c",
+  "declared_license": "CC-BY-3.0 (dataset card metadata; scraped third-party provenance remains a caveat)",
+  "attribution": "Kaushik Moudgalya, Ankit Ramakrishnan, Vamsikrishna Chemudupati, Xing Han Lu; TASTY, arXiv:2305.05379; Banana-Leopard/TASTY; underlying GeeksforGeeks snippets",
+  "output_sha256": "9c9b3be5ef829b23fb616ff840754aabfc73de90e3777fbeee3cbcfe65e5af95"
+}

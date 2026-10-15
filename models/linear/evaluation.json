@@ -1,0 +1,168 @@
+{
+  "backend": "linear",
+  "target": "time_complexity",
+  "majority_accuracy": 0.06666666666666667,
+  "majority_class": "logn",
+  "epochs": null,
+  "seed": 42,
+  "dataset_sha256": "2a1f979efe891254b0295b3dd1da351dfa26451a06d8a718bb03236f92898509",
+  "rows": 28,
+  "train_rows": 13,
+  "test_rows": 15,
+  "train_groups": 10,
+  "test_groups": 5,
+  "group_overlap": 0,
+  "split_seed": 66,
+  "accuracy": 0.3333333333333333,
+  "macro_f1": 0.34523809523809523,
+  "classification_report": {
+    "constant": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "logn": {
+      "precision": 0.14285714285714285,
+      "recall": 1.0,
+      "f1-score": 0.25,
+      "support": 1.0
+    },
+    "linear": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "nlogn": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 3.0
+    },
+    "quadratic": {
+      "precision": 0.25,
+      "recall": 0.5,
+      "f1-score": 0.3333333333333333,
+      "support": 2.0
+    },
+    "cubic": {
+      "precision": 0.5,
+      "recall": 0.5,
+      "f1-score": 0.5,
+      "support": 2.0
+    },
+    "exponential": {
+      "precision": 1.0,
+      "recall": 0.5,
+      "f1-score": 0.6666666666666666,
+      "support": 2.0
+    },
+    "accuracy": 0.3333333333333333,
+    "macro avg": {
+      "precision": 0.413265306122449,
+      "recall": 0.42857142857142855,
+      "f1-score": 0.34523809523809523,
+      "support": 15.0
+    },
+    "weighted avg": {
+      "precision": 0.37619047619047613,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.3055555555555555,
+      "support": 15.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      1,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      2,
+      0,
+      0
+    ],
+    [
+      0,
+      3,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  ],
+  "label_order": [
+    "constant",
+    "logn",
+    "linear",
+    "nlogn",
+    "quadratic",
+    "cubic",
+    "exponential"
+  ],
+  "test_problem_ids": [
+    "synthetic-constant-1",
+    "synthetic-constant-3",
+    "synthetic-logn-3",
+    "synthetic-linear-0",
+    "synthetic-linear-2",
+    "synthetic-linear-3",
+    "synthetic-nlogn-1",
+    "synthetic-nlogn-2",
+    "synthetic-nlogn-3",
+    "synthetic-quadratic-0",
+    "synthetic-quadratic-1",
+    "synthetic-cubic-0",
+    "synthetic-cubic-1",
+    "synthetic-exponential-2",
+    "synthetic-exponential-3"
+  ],
+  "synthetic": true,
+  "python": "3.14.2"
+}
