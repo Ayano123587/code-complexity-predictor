@@ -1,0 +1,28 @@
+{
+  "study": "bounded-structure-v2",
+  "dataset_sha256": "9c9b3be5ef829b23fb616ff840754aabfc73de90e3777fbeee3cbcfe65e5af95",
+  "split_sha256": "6cdffe9630b72a9fd15c2052b7fe06e8a124bfbb9e946a4d830ecac4d6dbf8d0",
+  "split_status": "Existing train830/validation277/test275; corpus/test previously observed. Retrospective development, not new independent evidence.",
+  "maximum_cpu_wall_seconds": 600,
+  "threads": 2,
+  "selection": "Validation macro F1 then accuracy; no test scores used for choices. Freeze selection before a single descriptive test comparison.",
+  "hypotheses": [
+    "Structural leaf1 improves macro F1 but poor probability loss motivates leaf2/5, class-weight ablation and train-group sigmoid calibration; legacy plus structure may complement errors."
+  ],
+  "candidates": [
+    "structure_extra_leaf1",
+    "structure_extra_leaf2",
+    "structure_extra_leaf5",
+    "structure_extra_unweighted",
+    "structure_calibrated_sigmoid",
+    "legacy_structure_equal"
+  ],
+  "nonlinear_budget": {
+    "extra_trees": 400,
+    "hist_gradient_boosting_iterations": 150
+  },
+  "calibration": "Sigmoid calibration only on three stratified group folds within training; reject missing-class folds",
+  "independent_source_research": "BigOBench remains Python/inferred-complexity; CppPerf measures performance-improving C++ patches, CLARC code search; no suitable independent expert C++ Big-O labels established in bounded research. Preserve external-evaluation limitation.",
+  "followup": true,
+  "prior_selection_sha256": "badcb5f68786a6d3477c56375e5f627da9656285917a7cc3fe9c916680f3d931"
+}

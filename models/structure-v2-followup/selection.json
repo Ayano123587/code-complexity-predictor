@@ -1,0 +1,77 @@
+{
+  "plan_sha256": "21dcf07aa035fdcf0d7f006f1621801352eb2d200417331abfe73d0656a4ebba",
+  "winner": {
+    "candidate": "legacy_structure_equal",
+    "validation": {
+      "accuracy": 0.8050541516245487,
+      "macro_f1": 0.5848667644347028,
+      "log_loss": 0.6831646761448302,
+      "multiclass_brier": 0.34082881527687137
+    },
+    "runtime_seconds": 32.62684020001325
+  },
+  "runs": [
+    {
+      "candidate": "structure_extra_leaf1",
+      "validation": {
+        "accuracy": 0.776173285198556,
+        "macro_f1": 0.5810713079943849,
+        "log_loss": 1.4201150067085384,
+        "multiclass_brier": 0.37038628158844766
+      },
+      "runtime_seconds": 7.605851599990274
+    },
+    {
+      "candidate": "structure_extra_leaf2",
+      "validation": {
+        "accuracy": 0.7581227436823105,
+        "macro_f1": 0.5578638800493105,
+        "log_loss": 1.096975907520937,
+        "multiclass_brier": 0.3747378826604877
+      },
+      "runtime_seconds": 6.8588557000039145
+    },
+    {
+      "candidate": "structure_extra_leaf5",
+      "validation": {
+        "accuracy": 0.7256317689530686,
+        "macro_f1": 0.5679764845365868,
+        "log_loss": 0.8410200646624822,
+        "multiclass_brier": 0.4160416691982507
+      },
+      "runtime_seconds": 5.5363592000067
+    },
+    {
+      "candidate": "structure_extra_unweighted",
+      "validation": {
+        "accuracy": 0.7184115523465704,
+        "macro_f1": 0.4311894760375116,
+        "log_loss": 1.4270074229678196,
+        "multiclass_brier": 0.36984097472924193
+      },
+      "runtime_seconds": 8.419954400000279
+    },
+    {
+      "candidate": "structure_calibrated_sigmoid",
+      "validation": {
+        "accuracy": 0.7653429602888087,
+        "macro_f1": 0.4998911972841789,
+        "log_loss": 0.7342515669802739,
+        "multiclass_brier": 0.36147295504244653
+      },
+      "runtime_seconds": 39.00494020000042
+    },
+    {
+      "candidate": "legacy_structure_equal",
+      "validation": {
+        "accuracy": 0.8050541516245487,
+        "macro_f1": 0.5848667644347028,
+        "log_loss": 0.6831646761448302,
+        "multiclass_brier": 0.34082881527687137
+      },
+      "runtime_seconds": 32.62684020001325
+    }
+  ],
+  "failures": [],
+  "test_used_for_selection": false
+}

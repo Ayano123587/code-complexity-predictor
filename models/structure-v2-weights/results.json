@@ -1,0 +1,81 @@
+{
+  "selection": {
+    "plan_sha256": "3af9cc696e315924288f591e148fd66cff550c336b023db98c0e4b35875204b2",
+    "winner": {
+      "candidate": "legacy_structure_weight25",
+      "validation": {
+        "accuracy": 0.7906137184115524,
+        "macro_f1": 0.5882498879402904,
+        "log_loss": 0.7079145065128125,
+        "multiclass_brier": 0.3538889768049361
+      },
+      "runtime_seconds": 15.525163999991491
+    },
+    "runs": [
+      {
+        "candidate": "legacy_structure_equal",
+        "validation": {
+          "accuracy": 0.8050541516245487,
+          "macro_f1": 0.5848667644347028,
+          "log_loss": 0.6831646761448302,
+          "multiclass_brier": 0.3408288152768713
+        },
+        "runtime_seconds": 10.216626499997801
+      },
+      {
+        "candidate": "legacy_structure_weight25",
+        "validation": {
+          "accuracy": 0.7906137184115524,
+          "macro_f1": 0.5882498879402904,
+          "log_loss": 0.7079145065128125,
+          "multiclass_brier": 0.3538889768049361
+        },
+        "runtime_seconds": 15.525163999991491
+      },
+      {
+        "candidate": "legacy_structure_weight75",
+        "validation": {
+          "accuracy": 0.7906137184115524,
+          "macro_f1": 0.5805768448553684,
+          "log_loss": 0.6884784343787536,
+          "multiclass_brier": 0.34639978082163586
+        },
+        "runtime_seconds": 33.359365099997376
+      }
+    ],
+    "failures": [],
+    "test_used_for_selection": false
+  },
+  "compatible_observed_test_comparison": {
+    "legacy_structure_weight25": {
+      "accuracy": 0.8145454545454546,
+      "macro_f1": 0.651498761147884,
+      "log_loss": 0.5782313126937201,
+      "multiclass_brier": 0.28152897694660417
+    },
+    "legacy_balanced_C16": {
+      "accuracy": 0.7090909090909091,
+      "macro_f1": 0.37900963872017807,
+      "log_loss": 0.7622080558431089,
+      "multiclass_brier": 0.40237188120398876
+    },
+    "legacy_unweighted_C4": {
+      "accuracy": 0.7381818181818182,
+      "macro_f1": 0.38832219316090283,
+      "log_loss": 0.758976255294624,
+      "multiclass_brier": 0.39571311763418676
+    }
+  },
+  "train_rows": 830,
+  "validation_rows": 277,
+  "test_rows": 275,
+  "group_overlap": 0,
+  "runtime_seconds": 33.04261249999399,
+  "environment": {
+    "python": "3.14.2",
+    "numpy": "2.4.2",
+    "scikit-learn": "1.8.0",
+    "rapidfuzz": "3.14.6"
+  },
+  "limitation": "Existing train830/validation277/test275; corpus/test previously observed. Retrospective development, not new independent evidence."
+}

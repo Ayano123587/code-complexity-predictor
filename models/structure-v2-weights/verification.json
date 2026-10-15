@@ -1,0 +1,62 @@
+{
+  "tests_passed": 18,
+  "checkpoint_sha256": "e61c138907645ca751a8d130dd2471fc359abc6edb0827728086ce3f3bd0e6cf",
+  "actual_cli_inference": {
+    "source": "examples/linear.cpp",
+    "predicted_class": "linear",
+    "finite_probability_count": 6,
+    "probability_sum": 1.0000000000000002
+  },
+  "validation_classification_report": {
+    "constant": {
+      "precision": 0.6666666666666666,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.4444444444444444,
+      "support": 6.0
+    },
+    "cubic": {
+      "precision": 0.42857142857142855,
+      "recall": 0.42857142857142855,
+      "f1-score": 0.42857142857142855,
+      "support": 7.0
+    },
+    "linear": {
+      "precision": 0.8484848484848485,
+      "recall": 0.8860759493670886,
+      "f1-score": 0.8668730650154799,
+      "support": 158.0
+    },
+    "logn": {
+      "precision": 0.5,
+      "recall": 0.3333333333333333,
+      "f1-score": 0.4,
+      "support": 6.0
+    },
+    "nlogn": {
+      "precision": 0.7368421052631579,
+      "recall": 0.56,
+      "f1-score": 0.6363636363636364,
+      "support": 25.0
+    },
+    "quadratic": {
+      "precision": 0.7341772151898734,
+      "recall": 0.7733333333333333,
+      "f1-score": 0.7532467532467533,
+      "support": 75.0
+    },
+    "accuracy": 0.7906137184115524,
+    "macro avg": {
+      "precision": 0.6524570440293291,
+      "recall": 0.5524412296564195,
+      "f1-score": 0.5882498879402904,
+      "support": 277.0
+    },
+    "weighted avg": {
+      "precision": 0.7853608297163377,
+      "recall": 0.7906137184115524,
+      "f1-score": 0.7849646510531043,
+      "support": 277.0
+    }
+  },
+  "serialization_repair": "Initial real CLI failed because estimator was serialized under __main__. Moved estimator classes to importable module and reserialized trusted local objects; no refit or holdout rescore."
+}

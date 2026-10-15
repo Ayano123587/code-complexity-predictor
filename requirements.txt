@@ -4,3 +4,4 @@ joblib>=1.4,<2
 pytest>=8,<10
 # Optional deep learning: pip install .[neural]
 rapidfuzz>=3.10,<4
+threadpoolctl>=3,<4

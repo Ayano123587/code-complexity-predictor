@@ -1,0 +1,42 @@
+{
+  "plan_sha256": "8792a937ec5a2a1950204b2534ea9610bc6aa1ca20bd1d37c546066ce0ed02e3",
+  "runs": [
+    {
+      "seed": 10,
+      "validation": {
+        "accuracy": 0.7870036101083032,
+        "macro_f1": 0.5719111752445086,
+        "log_loss": 0.7095502662344516,
+        "multiclass_brier": 0.35135429184445377
+      }
+    },
+    {
+      "seed": 42,
+      "validation": {
+        "accuracy": 0.7906137184115524,
+        "macro_f1": 0.5882498879402904,
+        "log_loss": 0.7079145065128125,
+        "multiclass_brier": 0.3538889768049361
+      }
+    },
+    {
+      "seed": 137,
+      "validation": {
+        "accuracy": 0.7906137184115524,
+        "macro_f1": 0.5948473526022712,
+        "log_loss": 0.7067104615344216,
+        "multiclass_brier": 0.352725522353788
+      }
+    }
+  ],
+  "three_seed_average_validation": {
+    "accuracy": 0.7942238267148014,
+    "macro_f1": 0.5896533023984004,
+    "log_loss": 0.7073441220320318,
+    "multiclass_brier": 0.35233421123036196
+  },
+  "seed_macro_f1_standard_deviation": 0.009641048261978138,
+  "runtime_seconds": 42.71632830001181,
+  "deployment_changed": false,
+  "holdout_evaluated": false
+}

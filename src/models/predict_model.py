@@ -5,9 +5,11 @@ from src.features.build_features import normalized
 from src.config import LABELS
 
 def predict(code,model_dir):
-    p=Path(model_dir);text=normalized(code)
+    if not isinstance(code,str):raise ValueError('C++ source must be text')
+    p=Path(model_dir)
     metadata=json.loads((p/'evaluation.json').read_text()) if (p/'evaluation.json').exists() else {}
-    if not text:raise ValueError('Source has no tokens')
+    text=code if metadata.get('input_representation')=='raw_cpp_v2' else normalized(code)
+    if not normalized(code):raise ValueError('Source has no tokens')
     if (p/'model.joblib').exists():
         model=joblib.load(p/'model.joblib');prob=model.predict_proba([text])[0];labels=model.classes_
     else:

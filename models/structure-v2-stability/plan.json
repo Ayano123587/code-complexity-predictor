@@ -1,0 +1,32 @@
+{
+  "study": "validation-only-seed-stability",
+  "dataset_sha256": "9c9b3be5ef829b23fb616ff840754aabfc73de90e3777fbeee3cbcfe65e5af95",
+  "split_sha256": "6cdffe9630b72a9fd15c2052b7fe06e8a124bfbb9e946a4d830ecac4d6dbf8d0",
+  "split_status": "Existing train830/validation277/test275; corpus/test previously observed. Retrospective development, not new independent evidence.",
+  "maximum_cpu_wall_seconds": 300,
+  "threads": 2,
+  "selection": "Validation macro F1 then accuracy; no test scores used for choices. Freeze selection before a single descriptive test comparison.",
+  "hypotheses": [
+    "Measure variance of fixed selected .25 lexical/.75 structural policy under three tree seeds and a fixed equal three-seed average. Diagnostic only: preserve already-frozen production policy regardless outcomes."
+  ],
+  "candidates": [
+    "legacy_structure_equal",
+    "legacy_structure_weight25",
+    "legacy_structure_weight75"
+  ],
+  "nonlinear_budget": {
+    "extra_trees": 400,
+    "hist_gradient_boosting_iterations": 150
+  },
+  "calibration": "Sigmoid calibration only on three stratified group folds within training; reject missing-class folds",
+  "independent_source_research": "BigOBench remains Python/inferred-complexity; CppPerf measures performance-improving C++ patches, CLARC code search; no suitable independent expert C++ Big-O labels established in bounded research. Preserve external-evaluation limitation.",
+  "followup": "weights",
+  "prior_selection_sha256": "7e9c6acb928a0a7a55156664872f60199cf8ba1d07d14b69b2b5463c73561d36",
+  "seeds": [
+    10,
+    42,
+    137
+  ],
+  "deployment_changes_allowed": false,
+  "holdout_evaluation_allowed": false
+}

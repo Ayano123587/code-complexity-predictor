@@ -6,7 +6,7 @@ name = "code-complexity-predictor"
 version = "0.1.0"
 description = "Leakage-aware C++ code complexity classification research pipeline"
 requires-python = ">=3.11"
-dependencies = ["scikit-learn>=1.5,<2", "joblib>=1.4,<2", "numpy>=2,<3", "rapidfuzz>=3.10,<4"]
+dependencies = ["scikit-learn>=1.5,<2", "joblib>=1.4,<2", "numpy>=2,<3", "rapidfuzz>=3.10,<4", "threadpoolctl>=3,<4"]
 [project.optional-dependencies]
 neural = ["torch>=2.5,<3"]
 dev = ["pytest>=8,<10"]
