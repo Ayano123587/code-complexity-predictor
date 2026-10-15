@@ -1,0 +1,150 @@
+{
+  "backend": "validation_selected_logistic",
+  "context_tokens": null,
+  "target": "time_complexity",
+  "data_sha256": "9c9b3be5ef829b23fb616ff840754aabfc73de90e3777fbeee3cbcfe65e5af95",
+  "split_sha256": "6cdffe9630b72a9fd15c2052b7fe06e8a124bfbb9e946a4d830ecac4d6dbf8d0",
+  "selection_sha256": "47c4bbc51ff946f7742109f3020db224e629a487b075c53f023cbf32693d3ed3",
+  "selected_spec": {
+    "features": "word",
+    "class_weight": "balanced",
+    "C": 16.0
+  },
+  "neural_comparison": {
+    "name": "cnn-1024-sqrt_inverse",
+    "validation_macro_f1": 0.5305674384036365,
+    "validation_accuracy": 0.7545126353790613,
+    "selected": false
+  },
+  "validation_scores": {
+    "accuracy": 0.7617328519855595,
+    "macro_f1": 0.5450185015235779
+  },
+  "holdout_scores": {
+    "accuracy": 0.7090909090909091,
+    "macro_f1": 0.37900963872017807
+  },
+  "baseline_holdout_scores": {
+    "accuracy": 0.7381818181818182,
+    "macro_f1": 0.38832219316090283
+  },
+  "majority_holdout_scores": {
+    "accuracy": 0.5709090909090909,
+    "macro_f1": 0.12114197530864197
+  },
+  "train_validation_rows": 1107,
+  "holdout_rows": 275,
+  "group_overlap": 0,
+  "classification_report": {
+    "constant": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 6.0
+    },
+    "cubic": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1-score": 0.0,
+      "support": 7.0
+    },
+    "linear": {
+      "precision": 0.7540106951871658,
+      "recall": 0.8980891719745223,
+      "f1-score": 0.8197674418604651,
+      "support": 157.0
+    },
+    "logn": {
+      "precision": 0.5,
+      "recall": 0.2,
+      "f1-score": 0.2857142857142857,
+      "support": 5.0
+    },
+    "nlogn": {
+      "precision": 0.6190476190476191,
+      "recall": 0.5,
+      "f1-score": 0.5531914893617021,
+      "support": 26.0
+    },
+    "quadratic": {
+      "precision": 0.7142857142857143,
+      "recall": 0.5405405405405406,
+      "f1-score": 0.6153846153846154,
+      "support": 74.0
+    },
+    "accuracy": 0.7090909090909091,
+    "macro avg": {
+      "precision": 0.43122400475341655,
+      "recall": 0.35643828541917716,
+      "f1-score": 0.37900963872017807,
+      "support": 275.0
+    },
+    "weighted avg": {
+      "precision": 0.6902984003518763,
+      "recall": 0.7090909090909091,
+      "f1-score": 0.691103636591019,
+      "support": 275.0
+    }
+  },
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      6,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      0,
+      1,
+      5
+    ],
+    [
+      2,
+      1,
+      141,
+      1,
+      5,
+      7
+    ],
+    [
+      0,
+      0,
+      2,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      9,
+      0,
+      13,
+      3
+    ],
+    [
+      1,
+      4,
+      28,
+      0,
+      1,
+      40
+    ]
+  ],
+  "label_order": [
+    "constant",
+    "cubic",
+    "linear",
+    "logn",
+    "nlogn",
+    "quadratic"
+  ],
+  "limitation": "Retrospective holdout on a previously explored corpus; not an untouched external dataset",
+  "local_prediction_table_sha256": "2d5a11f66d4061b23a3249a6ae2186fe8726c857ffccdb2d007e921ff28c5c44",
+  "local_prediction_rows": 275
+}

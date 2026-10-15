@@ -14,7 +14,7 @@ class TokenCNN(nn.Module):
         h=h.masked_fill((x==0).unsqueeze(1),-1e9)
         return self.head(h.max(dim=2).values)
 
-def encode(texts,vocab): return torch.tensor([[vocab.get(t,1) for t in text.split()[:512]]+[0]*(512-min(len(text.split()),512)) for text in texts])
+def encode(texts,vocab,maxlen=512): return torch.tensor([[vocab.get(t,1) for t in text.split()[:maxlen]]+[0]*(maxlen-min(len(text.split()),maxlen)) for text in texts])
 
 def fit(x,y,tr,te,output,epochs):
     if epochs<1:raise ValueError('epochs must be positive')

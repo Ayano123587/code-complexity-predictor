@@ -1,0 +1,283 @@
+{
+  "split_sha256": "6cdffe9630b72a9fd15c2052b7fe06e8a124bfbb9e946a4d830ecac4d6dbf8d0",
+  "selection_metric": "validation macro F1 then accuracy then simpler feature family",
+  "winner": {
+    "spec": {
+      "features": "word",
+      "class_weight": "balanced",
+      "C": 16.0
+    },
+    "validation": {
+      "accuracy": 0.7617328519855595,
+      "macro_f1": 0.5450185015235779
+    }
+  },
+  "runs": [
+    {
+      "spec": {
+        "features": "word",
+        "class_weight": null,
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.7075812274368231,
+        "macro_f1": 0.27373855652544177
+      }
+    },
+    {
+      "spec": {
+        "features": "word",
+        "class_weight": null,
+        "C": 4.0
+      },
+      "validation": {
+        "accuracy": 0.7364620938628159,
+        "macro_f1": 0.3565960454163249
+      }
+    },
+    {
+      "spec": {
+        "features": "word",
+        "class_weight": null,
+        "C": 16.0
+      },
+      "validation": {
+        "accuracy": 0.7509025270758123,
+        "macro_f1": 0.3794685253018586
+      }
+    },
+    {
+      "spec": {
+        "features": "word",
+        "class_weight": "balanced",
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.6425992779783394,
+        "macro_f1": 0.42669852131276054
+      }
+    },
+    {
+      "spec": {
+        "features": "word",
+        "class_weight": "balanced",
+        "C": 4.0
+      },
+      "validation": {
+        "accuracy": 0.740072202166065,
+        "macro_f1": 0.5349814387519021
+      }
+    },
+    {
+      "spec": {
+        "features": "word",
+        "class_weight": "balanced",
+        "C": 16.0
+      },
+      "validation": {
+        "accuracy": 0.7617328519855595,
+        "macro_f1": 0.5450185015235779
+      }
+    },
+    {
+      "spec": {
+        "features": "char",
+        "class_weight": null,
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.7184115523465704,
+        "macro_f1": 0.30701327775204573
+      }
+    },
+    {
+      "spec": {
+        "features": "char",
+        "class_weight": null,
+        "C": 4.0
+      },
+      "validation": {
+        "accuracy": 0.7509025270758123,
+        "macro_f1": 0.3446160358293735
+      }
+    },
+    {
+      "spec": {
+        "features": "char",
+        "class_weight": null,
+        "C": 16.0
+      },
+      "validation": {
+        "accuracy": 0.7653429602888087,
+        "macro_f1": 0.39372062429548205
+      }
+    },
+    {
+      "spec": {
+        "features": "char",
+        "class_weight": "balanced",
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.6209386281588448,
+        "macro_f1": 0.40996507943254734
+      }
+    },
+    {
+      "spec": {
+        "features": "char",
+        "class_weight": "balanced",
+        "C": 4.0
+      },
+      "validation": {
+        "accuracy": 0.7075812274368231,
+        "macro_f1": 0.46505468215994533
+      }
+    },
+    {
+      "spec": {
+        "features": "char",
+        "class_weight": "balanced",
+        "C": 16.0
+      },
+      "validation": {
+        "accuracy": 0.7509025270758123,
+        "macro_f1": 0.4940752354323045
+      }
+    },
+    {
+      "spec": {
+        "features": "wordchar",
+        "class_weight": null,
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.7256317689530686,
+        "macro_f1": 0.3240678346810422
+      }
+    },
+    {
+      "spec": {
+        "features": "wordchar",
+        "class_weight": null,
+        "C": 4.0
+      },
+      "validation": {
+        "accuracy": 0.7617328519855595,
+        "macro_f1": 0.3874273090374785
+      }
+    },
+    {
+      "spec": {
+        "features": "wordchar",
+        "class_weight": null,
+        "C": 16.0
+      },
+      "validation": {
+        "accuracy": 0.7436823104693141,
+        "macro_f1": 0.3697728516694034
+      }
+    },
+    {
+      "spec": {
+        "features": "wordchar",
+        "class_weight": "balanced",
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.703971119133574,
+        "macro_f1": 0.48168676538621263
+      }
+    },
+    {
+      "spec": {
+        "features": "wordchar",
+        "class_weight": "balanced",
+        "C": 4.0
+      },
+      "validation": {
+        "accuracy": 0.7472924187725631,
+        "macro_f1": 0.5434300051828834
+      }
+    },
+    {
+      "spec": {
+        "features": "wordchar",
+        "class_weight": "balanced",
+        "C": 16.0
+      },
+      "validation": {
+        "accuracy": 0.7436823104693141,
+        "macro_f1": 0.4685208353432653
+      }
+    },
+    {
+      "spec": {
+        "features": "wordstructure",
+        "class_weight": null,
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.7545126353790613,
+        "macro_f1": 0.35557186563650095
+      }
+    },
+    {
+      "spec": {
+        "features": "wordstructure",
+        "class_weight": null,
+        "C": 4.0
+      },
+      "validation": {
+        "accuracy": 0.776173285198556,
+        "macro_f1": 0.41853014233863756
+      }
+    },
+    {
+      "spec": {
+        "features": "wordstructure",
+        "class_weight": null,
+        "C": 16.0
+      },
+      "validation": {
+        "accuracy": 0.776173285198556,
+        "macro_f1": 0.41787898420551484
+      }
+    },
+    {
+      "spec": {
+        "features": "wordstructure",
+        "class_weight": "balanced",
+        "C": 1.0
+      },
+      "validation": {
+        "accuracy": 0.703971119133574,
+        "macro_f1": 0.48169864887465336
+      }
+    },
+    {
+      "spec": {
+        "features": "wordstructure",
+        "class_weight": "balanced",
+        "C": 4.0
+      },
+      "validation": {
+        "accuracy": 0.7581227436823105,
+        "macro_f1": 0.5377018910021373
+      }
+    },
+    {
+      "spec": {
+        "features": "wordstructure",
+        "class_weight": "balanced",
+        "C": 16.0
+      },
+      "validation": {
+        "accuracy": 0.7689530685920578,
+        "macro_f1": 0.4861123586469251
+      }
+    }
+  ],
+  "candidates": 24,
+  "holdout_evaluated": false
+}

@@ -21,3 +21,7 @@ Attribution: Kaushik Moudgalya, Ankit Ramakrishnan, Vamsikrishna Chemudupati, Xi
 There are 1,410 C++ rows. The time task retains 1,382 rows, excluding 28 `np` labels because NP does not establish an exponential runtime. The space task retains 1,396 rows, excluding 14 `np` labels. All comments are removed before feature extraction, including comments revealing complexity. The corpus contains no original source URLs or judge problem IDs: we conservatively group repeated descriptive leading-comment signatures and normalized near-duplicate code transitively. Unknown semantic clones and related article variants can remain across partitions; this is an honest grouped corpus evaluation, not a proven unseen-problem benchmark.
 
 No live website scraping, account credentials or Kaggle compute are necessary for this bounded CPU experiment.
+
+## Independent C++ benchmark search for the optimization study
+
+[Meta BigOBench](https://github.com/facebookresearch/BigOBench) was inspected as a possible independent source. Its benchmark targets Python, and its large dynamic-complexity label corpus is inferred from runtime/memory measurements rather than expert C++ asymptotic labels. It cannot honestly serve as independent C++ ground truth for this task. CodeComplex/CoRCoD likewise target other languages. The TASTY optimization therefore explicitly reports a retrospective held-out subset of a previously explored corpus, rather than inventing an untouched external test set. An independently annotated/licensed C++ corpus remains a real limitation.

@@ -14,4 +14,4 @@ jobs:
       - run: pip install -e ".[dev]"
       - run: python -m pytest -q
       - run: python -m src.data.make_dataset
-      - run: python -m src.models.train_model
+      - run: python -m src.models.train_model --data data/processed/smoke.jsonl --output models/ci-smoke

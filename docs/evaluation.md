@@ -20,3 +20,11 @@ For a public corpus, add a validation partition by problem for hyperparameter tu
 | cnn | 13 / 15 | 0.5333 | 0.5190 | 0.0667 | 0 |
 
 `tasty-*` uses public TASTY C++ code; `linear` and `cnn` use synthetic teaching snippets. The TASTY CNN uses 20 fixed epochs and a 512-token truncation; all other hyperparameters are fixed in source. Macro F1 averages observed dataset classes, including rare classes. The space dataset has only three nlogn rows, making that class estimate especially unstable. Class-level metrics and support are in the manifests. These are one grouped split with no hyperparameter search, not confidence intervals or a clinical/production claim.
+
+## Retrospective three-way optimization
+
+[Plan](optimization-plan.md): fixed stratified clone-group fold assignment,830training/277validation/275holdout rows. Twenty-four real logistic candidates and four trained weighted-CNN/context ablations were compared on validation only. The selected balanced token pipeline (C16) achieved validation accuracy .7617/macroF1 .5450. The strongest CNN (1024tokens, sqrt-inverse frequency loss, epoch17 of20) achieved .7545/.5306.
+
+On the once-evaluated retrospective holdout, selected pipeline accuracy=.7091/macroF1=.3790; untuned C4 word pipeline accuracy=.7382/macroF1=.3883; majority accuracy=.5709/macroF1=.1211. **The selected validation gain did not transfer to this holdout.** This result is preserved without switching models after seeing holdout scores. The fixed word comparison shares the new sublinear-TF/min_df2 representation and is not numerically identical to the earliest default TF-IDF implementation.
+
+All fold groups are disjoint, but the underlying TASTY corpus had already been explored in prior experiments. These results do not constitute an independently untouched external evaluation. Source problem IDs remain unavailable; normalized clone/title grouping cannot prove semantic isolation. Per-row predictions are retained locally under ignored data; only aggregates and split/configuration/provenance records are committed.

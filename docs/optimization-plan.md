@@ -1,0 +1,11 @@
+# Prespecified TASTY optimization study
+
+The original single train/test experiment is already observed. This new three-way protocol reuses the same public TASTY corpus; it is a retrospective held-out partition and must not be described as an independently untouched external test set. Source URLs and semantic problem IDs are unavailable, so grouping mitigates lexical/family leakage without proving semantic isolation.
+
+Freeze normalized near-duplicate/title-family clusters first, then assign train/validation/holdout using stratified group folds with fixed seed20261016. Five folds: fold0 is retrospective holdout, fold1 validation, folds2-4 training. Do not choose a seed using model scores. Check every observed label is represented; if not, report infeasibility rather than moving rows across groups.
+
+Select by validation macro F1, breaking ties by validation accuracy and simpler feature family. Fixed candidate grid: token word1-3grams, character3-5grams, union of both, and word+structural-count features; regularization C in1/4/16, class_weight none/balanced. Logistic regression max_iter3000. Compare also fixed majority and current baseline. Fit transformations on training only. Save every candidate validation score and the chosen specification. Refit the selected specification on train+validation, then evaluate the retrospective holdout once, preserving result without overwrites. No holdout-based tuning.
+
+Next-stage neural improvements may be compared using the same validation partition before a separate new study; an already evaluated holdout cannot be reused as if untouched. External independently annotated C++ evaluation remains an outstanding requirement for a strong generalization claim.
+
+Before retrospective holdout evaluation, compare four actual CNN ablations on the same frozen training/validation split: context512/1024 tokens crossed with sqrt-inverse/inverse training-frequency class weights. Fixed AdamW learning rate.002, batch32, weight_decay.01, 20epochs, gradientclip1. Select checkpoint and configuration using validation macroF1 then accuracy only. Preserve learning curves and all outcomes. Compare with the linear winner before final evaluation; if the neural model wins, implement the selected neural refit rather than silently ignoring it.

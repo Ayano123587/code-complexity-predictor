@@ -78,3 +78,20 @@ def test_tasty_source_family_grouping():
         writer.writerow({'code':'// Segment tree range query implementation\n'+body,'time_complexity':'linear','space_complexity':'constant'})
     rows,_=prepare(stream.getvalue().encode())
     assert rows[0]['problem_id']==rows[1]['problem_id']
+
+
+def test_optimized_split_preserves_all_cluster_boundaries():
+    from pathlib import Path
+    manifest=Path('models/tasty-optimized/split.json')
+    if not manifest.exists():pytest.skip('Recorded study not available')
+    split=json.loads(manifest.read_text());parts=split['partitions'];group_sets={k:{split['groups'][i] for i in v} for k,v in parts.items()}
+    assert not group_sets['train']&group_sets['validation']
+    assert not group_sets['train']&group_sets['holdout']
+    assert not group_sets['validation']&group_sets['holdout']
+    assert sorted(i for v in parts.values() for i in v)==list(range(split['rows']))
+
+
+def test_frozen_evaluation_refuses_overwrite(tmp_path):
+    from src.models.optimize import evaluate_once
+    (tmp_path/'evaluation.json').write_text('{}')
+    with pytest.raises(ValueError,match='already evaluated'):evaluate_once('missing-data',tmp_path)

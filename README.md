@@ -8,7 +8,7 @@ An installable research pipeline that classifies **C++ source code into coarse t
 
 ```sh
 python -m pip install -e ".[dev]"
-python -m src.data.make_dataset
+python -m src.data.tasty
 python -m src.models.train_model
 python -m src.models.predict_model examples/linear.cpp
 python -m pytest -q
@@ -18,11 +18,11 @@ Deep learning (CPU works; CUDA can be provisioned separately):
 
 ```sh
 python -m pip install -e ".[neural]"
-python -m src.models.train_model --backend cnn --output models/cnn --epochs 60
-python -m src.models.predict_model examples/linear.cpp --model models/cnn
+python -m src.models.train_model --backend cnn --output models/tasty-cnn --epochs 20
+python -m src.models.predict_model examples/linear.cpp --model models/tasty-cnn
 ```
 
-Training artifacts stay local; checked-in `models/*/evaluation.json` and `loss.json` record actual runs. Reproduce them by running the commands. Load joblib artifacts only from trusted training runs because pickle deserialization can execute code.
+The default CLI/Makefile workflow uses real TASTY C++ data. Synthetic smoke training requires explicit `make smoke`. Training artifacts stay local; checked-in `models/*/evaluation.json` and `loss.json` record actual runs. Reproduce them by running the commands. Load joblib artifacts only from trusted training runs because pickle deserialization can execute code.
 
 ## Reproduce the real TASTY C++ experiment
 
@@ -70,3 +70,21 @@ No automatic scraping of judges or unlicensed dataset redistribution. See [datas
 ## Boundaries
 
 Lexical normalization handles ordinary comments and string literals, but is not a complete C++ parser or preprocessor. Macros, templates, undefined behavior, multiple input dimensions, library cost assumptions, recursion and adversarial source can invalidate predictions. `exponential` is a coarse class, not a precise base or polynomial factor. Similarity clustering is quadratic and can conservatively group different labels. Use a scalable token MinHash index for large corpora, retaining the same transitive split constraints.
+
+## Validation-selected optimization study
+
+The initial single train/test experiment is followed by a frozen three-way, clone-grouped TASTY study. It reuses a previously explored corpus: its retrospective holdout is **not an independently untouched external test set**. See [prespecified plan](docs/optimization-plan.md).
+
+Actual search: 24 logistic pipelines across token/character/combined/structural features, regularization and class balancing; four CNN ablations across512/1024-token context and frequency-based class weights,20epochs each. Selection used validation macroF1 only, with stated tie rules. Best linear validation macroF1=.5450; best CNN=.5306. The selected linear model scored .3790 macroF1 on the retrospective holdout, versus .3883 for the fixed word baseline. This negative generalization result is retained; no test-guided replacement was made.
+
+Reproduce the declared study in a new output directory (existing frozen results cannot be overwritten):
+
+```sh
+python -m src.models.optimize freeze --output models/reproduction
+python -m src.models.optimize search --output models/reproduction
+python -m src.models.neural_search --output models/reproduction --epochs 20
+python -m src.models.optimize evaluate --output models/reproduction
+python -m src.models.predict_model examples/linear.cpp --model models/tasty-optimized
+```
+
+The selected model is refit on training+validation after configuration selection. Aggregate reports, class-level metrics, histories, frozen split IDs and configuration hashes are committed; per-row predictions are saved under ignored `data/interim/`, and binaries remain ignored. No claim of globally optimal models or unseen-source generalization is made.

@@ -36,5 +36,5 @@ def train(path, output, backend='linear', epochs=20):
     (output/'evaluation.json').write_text(json.dumps(report,indent=2),encoding='utf-8');return report
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--data',type=Path,default=Path('data/processed/smoke.jsonl'));p.add_argument('--output',default='models/linear');p.add_argument('--backend',choices=['linear','cnn'],default='linear');p.add_argument('--epochs',type=int,default=20);a=p.parse_args();print(json.dumps(train(a.data,a.output,a.backend,a.epochs),indent=2))
+    p=argparse.ArgumentParser();p.add_argument('--data',type=Path,default=Path('data/processed/tasty-time_complexity.jsonl'));p.add_argument('--output',default='models/tasty-linear');p.add_argument('--backend',choices=['linear','cnn'],default='linear');p.add_argument('--epochs',type=int,default=20);a=p.parse_args();print(json.dumps(train(a.data,a.output,a.backend,a.epochs),indent=2))
 if __name__=='__main__':main()
