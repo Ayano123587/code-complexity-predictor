@@ -7,6 +7,9 @@ An installable research pipeline that classifies **C++ source code into coarse t
 ## Run
 
 ```sh
+python -m venv .venv
+# Windows PowerShell: activate this repository's environment
+.\.venv\Scripts\Activate.ps1
 python -m pip install -e ".[dev]"
 python -m src.data.tasty
 python -m src.models.train_model
@@ -88,3 +91,5 @@ python -m src.models.predict_model examples/linear.cpp --model models/tasty-opti
 ```
 
 The selected model is refit on training+validation after configuration selection. Aggregate reports, class-level metrics, histories, frozen split IDs and configuration hashes are committed; per-row predictions are saved under ignored `data/interim/`, and binaries remain ignored. No claim of globally optimal models or unseen-source generalization is made.
+
+Use a separate virtual environment for each repository. These research projects use the requested generic `src` package layout; installing several together in one environment is unsupported. On Linux/macOS, activate with `source .venv/bin/activate` instead of the PowerShell command. All `python -m ...` and installed CLI commands assume the current repository directory and its activated environment. On Windows, direct `.venv\Scripts\python.exe -m ...` commands can also run without activation.
