@@ -1,21 +1,25 @@
-# Code Complexity Predictor: results overview
+# Complexity predictor: results and reproduction
 
-The deployed model remains the validation-selected lexical/structural v2 ensemble trained on real TASTY C++. It is a statistical classifier, not a proof of complexity.
+The retained model mixes 25% balanced lexical logistic regression (C=16) with 75% structural ExtraTrees (leaf size 3). On the frozen real TASTY time-complexity split, validation macro-F1 is 0.5882498879 and previously observed test macro-F1 is 0.6514987612. The older balanced classifier scored 0.3790096387 on that compatible observed test. These are retrospective comparisons, not independent-source generalization.
 
-| Study | Selection evidence | Outcome |
-|---|---|---|
-| Legacy balanced logistic | Validation macro F1 0.545019 | Earlier baseline |
-| Selected v2 ensemble | Validation macro F1 0.588250 | Retained production model |
-| Code mechanics | Best validation 0.676847 but OOF gain 0.003650 | Confirmation gate failed |
-| Family-balanced mechanics | Validation 0.680008 but OOF gain 0.000284 | Confirmation gate failed |
+Training has 830 rows, validation 277 and observed test 275. Labels are six coarse classes; ambiguous `np` labels were excluded. Descriptive source comments and normalized clones approximate families because original problem URLs are absent. Minority support remains limited. Dataset/license details are in [docs/datasets.md](docs/datasets.md).
 
-Previously observed holdout macro F1 is 0.651499 for v2 versus 0.379010 for the legacy balanced baseline. Those are retrospective, not new independent evidence. No holdout score was recomputed for the rejected mechanics/family studies. Minority classes and missing original problem URLs limit confidence.
+## Later validation studies
 
-- [Full original controlled study](docs/structure-v2.md)
-- [Grouped mechanics study](docs/mechanics-v3.md)
-- [Family-weighting study](docs/family-weight-v4.md)
-- [Dataset provenance and limitations](docs/datasets.md)
+| Procedure | Grouped OOF macro-F1 | Validation macro-F1 |
+|---|---:|---:|
+| Retained v2 baseline | 0.558688 | 0.588250 |
+| Mechanics, leaf 3 | 0.562338 | 0.676847 |
+| Mechanics, leaf 1 | 0.579837 | 0.571750 |
+| Family/class-mass weights | 0.563477 | 0.581089 |
+| Family weights + mechanics | 0.558972 | 0.680008 |
 
-`train.py` launches validation-only module implementations into a fresh directory. `evaluation_scripts/report.py` reads aggregates without data/model loading. Explicit observed-holdout evaluation is separate and does not rescore when the existing model is retained. `src/` contains implementation, `tests/` verifies invariants, and notebooks are EDA-only. All datasets, row predictions, trained weights and secrets remain ignored.
+Adoption required at least 0.005 macro-F1 improvement on both grouped OOF and validation. No candidate passed; validation spikes did not override grouped evidence. All variants remain in the [mechanics](models/mechanics-v3/results.json) and [family](models/family-weight-v4/results.json) aggregates. No later test rescore was used to select them.
 
-This train/evaluate/report organization follows the supplied [project-structure reference](https://github.com/yash9439/Finetuning-Opus-MT-en-fr-WikiData); implementations, protocols, data and results here are original to this project.
+## Reproduce
+
+Install in a separate repository environment, fetch the pinned real dataset with `python -m src.data.tasty`, then preserve the frozen split in `models/tasty-optimized/split.json`. The root `train.py family --output models/NEW_RUN` copies the committed plan and runs development only. Its documented default cached paths must exist; a newly fetched dataset alone does not recreate the original split.
+
+The retained ignored checkpoint is `models/structure-v2-weights/model.joblib`, SHA256 `e61c138907645ca751a8d130dd2471fc359abc6edb0827728086ce3f3bd0e6cf`. Production prediction uses `python -m src.models.predict_model examples/linear.cpp --model models/structure-v2-weights`. Scores are uncalibrated. Serialized models are trusted local artifacts, not arbitrary downloads.
+
+The executed notebook series displays source EDA, validation comparisons and class-level failures, with core definitions visible in the main notebook. Figures in `docs/figures` come from those executed analyses. The notebooks do not train or score tests by default. Existing model inference is shown only on the shipped public example. The last source suite had 28 passing tests; notebook schema, code compilation and real analysis execution are checked separately.

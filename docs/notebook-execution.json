@@ -1,0 +1,55 @@
+{
+  "scope": "Executed real-input EDA and recorded aggregate analysis; no new test scoring or full training from notebook viewing. Optional acquisition/training flags remained false.",
+  "notebooks": [
+    {
+      "path": "notebooks/01_source_and_grouped_eda.ipynb",
+      "sha256": "b46f6cb18c70b6e83e91bfaa2309838b4489cba9d2cf63a5a9b83f1cc4c0bdc7",
+      "code_cells": 5,
+      "code_lines": 53,
+      "embedded_pngs": 1,
+      "executed": true,
+      "executed_file_sha256": "81fc269c959305aadd7b96fddf2f2f0966b49019de00ee2d223fedd25f70b390"
+    },
+    {
+      "path": "notebooks/02_main_algorithms_and_experiments.ipynb",
+      "sha256": "5ffc73a851223064ab12899695babfc56cfae2a76cb2cce8095a73e1947b0c15",
+      "code_cells": 10,
+      "code_lines": 374,
+      "embedded_pngs": 1,
+      "executed": true,
+      "executed_file_sha256": "300d200a5bda3c737657ed2b32fa2dd09cdfd2808ae978cbf7a22f6b7986c002"
+    },
+    {
+      "path": "notebooks/03_evaluation_and_minority_errors.ipynb",
+      "sha256": "78b8b0b82403ceb5cd3d61734222619dce06e3ecfd7673d26dbe87421a17eae5",
+      "code_cells": 4,
+      "code_lines": 52,
+      "embedded_pngs": 1,
+      "executed": true,
+      "executed_file_sha256": "c0ad0e2abdcabb1674a3a375fb1ff2ecf349270fd7302140321bde7d940295c6"
+    }
+  ],
+  "figures": [
+    {
+      "path": "docs/figures/complexity_corpus_support.png",
+      "sha256": "41ce390de1063b54156368b42e02222544fdc2df97879929ac474f7387871381",
+      "width": 1525,
+      "height": 543
+    },
+    {
+      "path": "docs/figures/complexity_grouped_development.png",
+      "sha256": "9685ebdcac4549dcf988231d204631898be708ca1e435bb138e64b379476a019",
+      "width": 1525,
+      "height": 544
+    },
+    {
+      "path": "docs/figures/complexity_minority_errors.png",
+      "sha256": "ac28caa3debd59390b734ebdeef32f9db492970c274d5c79f59b9cd9bd4c9bcd",
+      "width": 1526,
+      "height": 543
+    }
+  ],
+  "schema_and_plain_python_compilation": "passed",
+  "output_errors": 0,
+  "sha256_basis": "sha256 uses UTF-8 file bytes with physical CRLF normalized to LF, matching Git publication. executed_file_sha256 preserves the actual host artifact bytes."
+}
