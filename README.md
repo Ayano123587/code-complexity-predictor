@@ -30,7 +30,7 @@ Launch `python -m jupyter lab` from the activated environment.
 - [Main algorithms and experiments](notebooks/02_main_algorithms_and_experiments.ipynb): readable core code, grouped classifiers and executed validation comparisons.
 - [Evaluation and minority errors](notebooks/03_evaluation_and_minority_errors.ipynb): executed class metrics, figures and saved-model inference.
 
-The retained ensemble reached validation macro-F1 **0.58825** and previously observed test macro-F1 **0.65150**. See [Report.md](Report.md), [validation selection](docs/experiments.md) and [dataset/license notes](docs/datasets.md).
+The retained ensemble reached validation macro-F1 **0.58825** and previously observed test macro-F1 **0.65150**. See [Report.md](Report.md) for validation selection and [dataset/license notes](docs/datasets.md).
 
 The time task has 1,382 accepted snippets and six classes. Minority support is small, source/problem IDs are incomplete and clone grouping is approximate. Previously observed test scores are retrospective. Scores are uncalibrated; macros, templates, library costs and input-size assumptions need human review. Data, source-row predictions, secrets and weights stay ignored.
 

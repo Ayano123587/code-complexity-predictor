@@ -8,4 +8,4 @@ There are 1,410 C++ rows. Time labels retain 1,382 rows, excluding 28 `np` value
 
 Original problem URLs are unavailable. Descriptive leading-comment signatures and normalized clone grouping approximate problem families; they cannot establish fully independent source generalization. An expert-labeled independent C++ corpus remains needed. CodeNet problem difficulty/runtime and Java/Python-only complexity corpora are not substitutes for C++ asymptotic ground truth.
 
-The original tiny synthetic generator remains a mechanics smoke tool only. Its scores are not public benchmark evidence. Raw datasets, source rows and row-level predictions stay ignored; source/provenance hashes are versioned.
+Raw datasets, source rows and row-level predictions stay ignored; source/provenance hashes are versioned.
