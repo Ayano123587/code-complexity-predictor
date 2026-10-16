@@ -68,7 +68,7 @@ No automatic scraping of judges or unlicensed dataset redistribution. See [datas
 
 ## Repository map
 
-`src/data` handles ingestion and grouping; `src/features` tokenizes C++; `src/models` trains and predicts; `src/visualization` prints confusion matrices; `notebooks` contains EDA only; `tests` and `.github/workflows` validate the pipeline. `data/{raw,external,interim,processed}` and `.env` are ignored. Model binaries are ignored; numerical summaries are committed.
+`src/data` handles ingestion and grouping; `src/features` tokenizes C++; `src/models` trains and predicts; `src/visualization` prints confusion matrices; `notebooks` contains an opt-in end-to-end walkthrough and EDA; `tests` and `.github/workflows` validate the pipeline. `data/{raw,external,interim,processed}` and `.env` are ignored. Model binaries are ignored; numerical summaries are committed.
 
 ## Boundaries
 
@@ -114,3 +114,7 @@ Model binaries remain local. To reproduce studies in a fresh clone, run `python 
 The later [group-confirmed mechanics study](docs/mechanics-v3.md) retained this model: new loop/recursion features did not improve both grouped out-of-fold and validation macro F1 by the prespecified margin. No new holdout scoring was performed.
 
 See [Report.md](Report.md) for the consolidated baseline/candidate table. Root `train.py` runs validation-only studies into fresh directories; `evaluation_scripts/` separates aggregate reporting and explicit observed-cohort evaluation. The later [family-balanced study](docs/family-weight-v4.md) also retained v2.
+
+## Runnable notebook
+
+The [end-to-end walkthrough](notebooks/end_to_end_walkthrough.ipynb) covers real data acquisition, optional production training, aggregate validation comparisons, plots and saved-model inference. Fetching/training/inference are explicit opt-ins; observed tests are never rescored automatically. Use the repository’s isolated environment plus Jupyter and matplotlib.
