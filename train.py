@@ -14,8 +14,13 @@ def create_run(output,plan):
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('study',choices=['mechanics','family']);parser.add_argument('--output',required=True,type=Path)
+    parser.add_argument('study',choices=['selected','mechanics','family']);parser.add_argument('--output',required=True,type=Path);parser.add_argument('--data',type=Path)
     args=parser.parse_args()
+    if args.study == 'selected':
+        if args.data is None: parser.error('selected requires --data')
+        from src.models.selected import train
+        train(args.data, args.output)
+        return
     default='models/mechanics-v3/plan.json' if args.study=='mechanics' else 'models/family-weight-v4/plan.json'
     output=create_run(args.output,default)
     if args.study=='mechanics':from src.models.mechanics_v3 import run
