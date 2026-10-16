@@ -1,0 +1,27 @@
+{
+  "study": "group-robust-code-mechanics-v3",
+  "dataset_sha256": "9c9b3be5ef829b23fb616ff840754aabfc73de90e3777fbeee3cbcfe65e5af95",
+  "split_sha256": "6cdffe9630b72a9fd15c2052b7fe06e8a124bfbb9e946a4d830ecac4d6dbf8d0",
+  "hypothesis": "Name-invariant loop update/bound and direct recursive-call argument mechanics add information beyond generic loop and token counts. Confirm against grouped out-of-fold family generalization, not validation alone.",
+  "candidates": [
+    "v2_baseline",
+    "mechanics_leaf3",
+    "mechanics_leaf1",
+    "mechanics_randomforest_leaf3"
+  ],
+  "grouped_cv": {
+    "folds": 3,
+    "seed": 42,
+    "scope": "original 830 training rows only; pooled out-of-fold macro F1"
+  },
+  "selection": "highest grouped OOF macro F1 among candidates whose OOF and original validation macro F1 BOTH exceed baseline by at least 0.005; otherwise retain baseline. Ties prefer original candidate order.",
+  "weights": {
+    "lexical": 0.25,
+    "structural": 0.75
+  },
+  "trees": 400,
+  "threads": 2,
+  "maximum_cpu_wall_seconds": 600,
+  "test_policy": "Previously observed 275-row holdout never used for candidate selection. If gate passes, freeze selection before one descriptive comparison against existing v2 on same refit scope; no fresh-evidence claim.",
+  "disclosure": "Corpus/split and prior test scores already observed. Existing approximate clone/title-signature grouping cannot prove independent source families; rare validation classes have 6\u20137 examples."
+}

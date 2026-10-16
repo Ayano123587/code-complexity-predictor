@@ -110,3 +110,5 @@ python -m src.models.predict_model examples/linear.cpp --model models/structure-
 ```
 
 Model binaries remain local. To reproduce studies in a fresh clone, run `python -m src.models.structure_v2 --output models/structure-v2`, then the same command with `models/structure-v2-followup` and `models/structure-v2-weights`. Committed selection/results refuse overwrite: preserve those manifests and use a copied output directory with its plan only for reruns. `--release` refits the frozen selected model on train plus validation and performs the descriptive observed-holdout comparison once.
+
+The later [group-confirmed mechanics study](docs/mechanics-v3.md) retained this model: new loop/recursion features did not improve both grouped out-of-fold and validation macro F1 by the prespecified margin. No new holdout scoring was performed.

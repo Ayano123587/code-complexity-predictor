@@ -9,3 +9,7 @@ Validation: `python -m pytest -q` => 18 passed. Actual `python -m src.models.pre
 Ignored artifacts to preserve/copy into the original repository if desired: `models/structure-v2-weights/model.joblib` (SHA256 e61c138907645ca751a8d130dd2471fc359abc6edb0827728086ce3f3bd0e6cf), validation-model checkpoints under all four study directories, and `data/interim/*structure-v2*` logs/predictions. Raw/processed data and binaries are never committed. The original corpus copy is already available in the original checkout.
 
 For continuation: no more local weight tuning based on the observed holdout. Acquire source-disjoint independently annotated C++ Big-O examples before external evaluation; missing problem IDs and six/seven-row validation minority classes limit confidence. CPU-only measured study work totaled 333.18 seconds across validation/final-refit/stability stages. No cloud or paid run.
+
+## Resumed mechanics round
+
+Prespecified grouped OOF confirmation retained v2. Baseline OOF/validation macro F1 is 0.558688/0.588250; mechanics leaf3 is 0.562338/0.676847 and fails the 0.005 OOF gain gate. Leaf1 improves OOF but worsens validation. No holdout rescore. See `docs/mechanics-v3.md` and aggregate manifests. 23 tests and actual saved artifact/retained CLI checks pass. Runtime 93.99 seconds; data/models remain ignored.

@@ -1,0 +1,28 @@
+{
+  "candidate_artifact_inference": [
+    {
+      "candidate": "mechanics_leaf1",
+      "checkpoint_sha256": "1881191fa7843d2c650853e1cd17e2bb3e684124893ea2a52a96332b39e7beef",
+      "finite_probability_count": 6
+    },
+    {
+      "candidate": "mechanics_leaf3",
+      "checkpoint_sha256": "ea141053d47d6e46abc9547e29afa6c17ff842f50f14b448ea00e5fb79f957aa",
+      "finite_probability_count": 6
+    },
+    {
+      "candidate": "mechanics_randomforest_leaf3",
+      "checkpoint_sha256": "86a2dd4914ca2a9b1c0bb5fb7448c2d36bf86ff595b98f27bacdaf18b2f0ce1e",
+      "finite_probability_count": 6
+    },
+    {
+      "candidate": "v2_baseline",
+      "checkpoint_sha256": "1c2aedf31d7420a1879be47bb415284f6c60f9ac9c4b6ec130458bd6c82cc670",
+      "finite_probability_count": 6
+    }
+  ],
+  "retained_production_checkpoint_sha256": "e61c138907645ca751a8d130dd2471fc359abc6edb0827728086ce3f3bd0e6cf",
+  "retained_cli_source": "examples/linear.cpp",
+  "test_evaluated": false,
+  "tests_passed": 23
+}
