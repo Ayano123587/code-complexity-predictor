@@ -1,0 +1,19 @@
+{
+  "study": "family-balanced-training-v4",
+  "hypothesis": "315 of 830 training rows belong to repeated approximate families (up to 5 rows). Equal family contribution, and family-aware class weights, may improve minority-source generalization compared with counting every row equally. No label/split expansion or relaxed adoption gate.",
+  "dataset_sha256": "9c9b3be5ef829b23fb616ff840754aabfc73de90e3777fbeee3cbcfe65e5af95",
+  "split_sha256": "6cdffe9630b72a9fd15c2052b7fe06e8a124bfbb9e946a4d830ecac4d6dbf8d0",
+  "candidates": [
+    "v2_baseline",
+    "family_v2",
+    "family_class_v2",
+    "family_mechanics_leaf3"
+  ],
+  "weights": "Within each fit, sample weight inverse group size, normalized to mean 1. For family_class_v2, also balance class MASS under family weights rather than raw row count; remove automatic class_weight to avoid double weighting.",
+  "cv": "same three original-training-only StratifiedGroupKFold 42 folds; all group sizes/class masses computed inside the respective training fold.",
+  "selection": "Require >=0.005 macro F1 improvement on BOTH pooled grouped OOF and original validation; rank eligible by OOF; otherwise retain v2.",
+  "maximum_cpu_wall_seconds": 1800,
+  "threads": 2,
+  "test": "Previously observed 275-row holdout excluded from selection; no rescore if baseline retained. If adopted, serialize selection first and perform one descriptive refit comparison only.",
+  "disclosure": "Repeated development on observed TASTY corpus. Source title/clone grouping approximates rather than proves problem independence; rare-class support remains small."
+}

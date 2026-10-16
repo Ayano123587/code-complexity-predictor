@@ -1,0 +1,27 @@
+{
+  "tests_passed": 28,
+  "actual_saved_candidate_inference": [
+    {
+      "candidate": "family_class_v2-validation",
+      "sha256": "47dfc1505a8083fd36f0abd7bfb4decaa74ed8d09191b4f6f8d316d2bff4f033",
+      "finite_probability_count": 6
+    },
+    {
+      "candidate": "family_mechanics_leaf3-validation",
+      "sha256": "b822b9326bf7e3e1a99357ef22b22617339922530f12ae0370b94bf7d2da277e",
+      "finite_probability_count": 6
+    },
+    {
+      "candidate": "family_v2-validation",
+      "sha256": "c014747ca9346fa4d2e165bbcdc9e96ede2b1dbca2dda974f40cbc5f8206b7d6",
+      "finite_probability_count": 6
+    },
+    {
+      "candidate": "v2_baseline-validation",
+      "sha256": "1c2aedf31d7420a1879be47bb415284f6c60f9ac9c4b6ec130458bd6c82cc670",
+      "finite_probability_count": 6
+    }
+  ],
+  "retained_checkpoint_sha256": "e61c138907645ca751a8d130dd2471fc359abc6edb0827728086ce3f3bd0e6cf",
+  "holdout_rescored": false
+}
